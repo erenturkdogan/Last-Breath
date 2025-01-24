@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("hor", strafe * multiplier); 
 
         // Zıplama
-        if (Input.GetKeyDown(KeyCode.Space) && characterController.isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Jump"); // Jump tetiklenir
         }
