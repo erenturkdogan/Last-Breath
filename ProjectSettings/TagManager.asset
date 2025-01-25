@@ -6,6 +6,7 @@ TagManager:
   tags:
   - zombie
   - Zombie
+  - PaperPiece
   layers:
   - Default
   - TransparentFX
