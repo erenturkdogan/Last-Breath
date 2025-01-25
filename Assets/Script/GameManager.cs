@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     // UI elemanları
     [SerializeField] private Slider progressBar; // Bar referansı
     [SerializeField] private int totalPaperCount = 5; // Toplam kağıt sayısı
+    [SerializeField] private GameObject gameOverPanel; // Game Over panelinin referansı
 
     private void Awake()
     {
@@ -58,5 +59,19 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("ProgressBar referansı eksik!");
         }
+    }
+
+    // Game Over ekranını açan fonksiyon
+    public void ShowGameOver()
+    {
+        // Game Over Panelini Göster
+        gameOverPanel.SetActive(true);
+
+        // Fareyi Görünür ve Serbest Bırak
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        // Fareyi ekrana ortalamak
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
