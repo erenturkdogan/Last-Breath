@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Slider için gerekli
+using TMPro; // TextMeshPro için gerekli
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider progressBar; // Bar referansı
     [SerializeField] private int totalPaperCount = 5; // Toplam kağıt sayısı
     [SerializeField] private GameObject gameOverPanel; // Game Over panelinin referansı
+    [SerializeField] private GameObject winPanel; // Kazanma paneli
+    [SerializeField] private AudioSource backgroundMusic; // Arka plan müziği için AudioSource
 
     private void Awake()
     {
@@ -48,17 +51,42 @@ public class GameManager : MonoBehaviour
         {
             progressBar.value = collectedPapers.Count;
 
-            // Eğer tüm kağıtlar toplandıysa, bitiş işlemi yapılabilir
+            // Eğer tüm kağıtlar toplandıysa, kazandınız ekranını göster
             if (collectedPapers.Count >= totalPaperCount)
             {
                 Debug.Log("Tüm kağıtlar toplandı! Görev tamamlandı!");
-                // Burada istediğiniz bitiş mekaniklerini ekleyebilirsiniz
+                
+                // Kazanma mesajını göster
+                ShowWinScreen();
             }
         }
         else
         {
             Debug.LogError("ProgressBar referansı eksik!");
         }
+    }
+
+    // Kazanma ekranını gösteren fonksiyon
+    public void ShowWinScreen()
+    {
+        // Kazanma panelini aktif et
+        winPanel.SetActive(true);
+
+        // Arka plan müziğini durdur
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Stop();
+        }
+
+        // Oyun zamanını durdur
+        Time.timeScale = 0f; // Oyunun durmasını sağlar
+
+        // Fareyi görünür hale getir
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        // Fareyi ekrana ortalamak
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     // Game Over ekranını açan fonksiyon
