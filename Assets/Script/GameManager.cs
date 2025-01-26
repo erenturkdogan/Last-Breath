@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             if (collectedPapers.Count >= totalPaperCount)
             {
                 Debug.Log("Tüm kağıtlar toplandı! Görev tamamlandı!");
-                
+
                 // Kazanma mesajını göster
                 ShowWinScreen();
             }

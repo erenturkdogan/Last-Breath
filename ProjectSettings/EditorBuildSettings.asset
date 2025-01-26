@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainMenu.unity
     guid: 0228ace65a001ad41a8588005e25a2a5
+  - enabled: 0
+    path: Assets/Scenes/akabeka.unity
+    guid: 6b29f5a1f084f544b959d08f169f6e84
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
-    guid: 6b29f5a1f084f544b959d08f169f6e84
+    guid: 2fa41c0e4c12802449905c1f68e3297f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

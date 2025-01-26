@@ -1335,6 +1335,7 @@ GameObject:
   - component: {fileID: 7454099041226790310}
   - component: {fileID: 7486880110294007747}
   - component: {fileID: 7937476350510073446}
+  - component: {fileID: -4311586829929182163}
   m_Layer: 0
   m_Name: (P) Characters_Zombie_SuitMan_1
   m_TagString: Zombie
@@ -1479,6 +1480,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 5
+--- !u!114 &-4311586829929182163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660184903045082040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c8fd3978a03214b9bc4181309ad4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &6906493944559020957
 GameObject:
   m_ObjectHideFlags: 0
